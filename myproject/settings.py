@@ -12,6 +12,20 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
+# settings.py
+import sentry_sdk
+
+sentry_sdk.init(
+    dsn="https://f6d2838c4c14975fa91bfc90aed6ff9f@o4506331794440192.ingest.sentry.io/4506336709640192",
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    traces_sample_rate=1.0,
+    # Set profiles_sample_rate to 1.0 to profile 100%
+    # of sampled transactions.
+    # We recommend adjusting this value in production.
+    profiles_sample_rate=1.0,
+)
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
